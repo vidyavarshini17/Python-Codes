@@ -1,6 +1,6 @@
 import random
 
-words=["harry","potter","lost","space","fairy","godmother","stranger","things"]
+words=["harrypotter","lostinspace","fairygodmother","strangerthings"]
 
 def letter_guess(display,chosen_word):
     change_count=0
@@ -15,9 +15,8 @@ def letter_guess(display,chosen_word):
 
 def new_game():
     chosen_word=random.choice(words)
-    print(chosen_word)
     length=len(chosen_word)
-    print(length)
+    print("H.A.N.G.M.A.N")
     display=[]
     for i in range (0,length):
         display.append("_")
