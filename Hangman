@@ -1,0 +1,41 @@
+import random
+
+words=["harry","potter","lost","space","fairy","godmother","stranger","things"]
+
+def letter_guess(display,chosen_word):
+    change_count=0
+    letter=input("Guess a letter ").lower()
+    # check if the letter is part of the chosen word
+    for index in range(0,len(chosen_word)):
+        l=chosen_word[index]
+        if(l==letter):
+            display[index]=letter
+            change_count+=1
+    return display,change_count
+
+def new_game():
+    chosen_word=random.choice(words)
+    print(chosen_word)
+    length=len(chosen_word)
+    print(length)
+    display=[]
+    for i in range (0,length):
+        display.append("_")
+    print(display)
+    lives_left=6
+
+    while(lives_left>0):
+        print(f"No. of lives left is {lives_left}")
+        if "_" not in display:
+            print(f"You won! The word is \"{chosen_word}\"")
+            break
+        else:
+            display,change_count=letter_guess(display,chosen_word)
+            if (change_count==0):
+                lives_left-=1
+            print(display)
+            
+    if(lives_left==0):
+        print(f"You lose! The word is \"{chosen_word}\"")
+   
+new_game()
