@@ -1,0 +1,16 @@
+def swap_case(s):
+    new_str=""
+    for i in s:
+        ascii=ord(i) #finds ascii value of character
+        if(ascii>=65 and ascii<=90): #if uppercase letter
+            new_str+=chr(ascii+32) #to lowercase , chr() provides char having the mentioned ascii value
+        elif(ascii>=97 and ascii<=122): #if lowercase letter
+            new_str+=chr(ascii-32) #to uppercase
+        else:
+            new_str+=i
+    return new_str
+
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
